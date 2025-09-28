@@ -2,8 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { SampleFeature } from "@/components/feature/sample-feature";
-import Link from "next/link";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 export default function Home() {
   return (
