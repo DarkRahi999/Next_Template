@@ -1,21 +1,22 @@
 import type { Metadata } from "next";
-import { Salsa, Roboto_Condensed  } from "next/font/google";
-import "../style/style.css";
+import { Salsa, Roboto_Condensed } from "next/font/google";
+import "../style/globals.css";
 
 const salsa = Salsa({
   variable: "--font-salsa",
   subsets: ["latin"],
   weight: "400",
 });
+
 const roboto = Roboto_Condensed({
-  variable: "--font-Roboto_Condensed",
+  variable: "--font-roboto-condensed",
   subsets: ["latin"],
   weight: "500",
 });
 
 export const metadata: Metadata = {
-  title: "Structure",
-  description: "This is a basic Structure for start a new nextjs project. Easy to set up just copy paste and run",
+  title: "Next.js Starter Template",
+  description: "A production-ready Next.js starter template with TypeScript, Tailwind CSS, and shadcn/ui",
 };
 
 export default function RootLayout({
@@ -26,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${salsa.variable} ${roboto.variable} antialiased dark`}>
-        <main>{children}</main>
+        {children}
       </body>
     </html>
   );
