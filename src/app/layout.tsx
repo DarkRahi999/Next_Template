@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Salsa, Roboto_Condensed } from "next/font/google";
 import "../style/globals.css";
+import { ThemeProvider } from "@/provider/themeProvider";
 
 const salsa = Salsa({
   variable: "--font-salsa",
@@ -25,9 +26,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${salsa.variable} ${roboto.variable} antialiased dark`}>
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${salsa.variable} ${roboto.variable} antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

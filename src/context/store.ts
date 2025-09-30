@@ -1,11 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer from "./store/userSlice";
 
 //W---------={ Store }=----------</br>
 export const store = configureStore({
-  reducer: {
-    user: userReducer,
-  },
+  reducer: {},
 });
 
 //W---------={ RootState and AppDispatch }=----------</br>
